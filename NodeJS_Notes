@@ -24,4 +24,5 @@ Since node.js is a single threaded runtime, it is Synchronous.
 In order to make node.js asynchronous, call back functions are used. 
 Callback functions let the code continue with next line of execution and callback function is executed when the initial task is completed. 
 
-
+http module - this is for creating a server to listen to requests and provide a response. 
+create server and then user it so - http.createServer
