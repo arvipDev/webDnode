@@ -1,0 +1,18 @@
+
+How Node.js works behind the scene - https://www.youtube.com/watch?v=ooBxSg1Cl1w
+1) Node.js docs - https://nodejs.org/docs/latest/api/
+2) libuv 
+3) req res/ properties methods/http
+ Node.js Guide - https://nodejs.org/en/guides
+ 
+ Node.js is an event driven runtime that uses javaScript to execute a service side code/instruction
+ ----------------------------------
+ Udemy bootcamp 2024
+ **********************************
+Installing node using snap - Check node snap website for latest stable version and its cmd to install - https://snapcraft.io/node
+1) sudo snap install node --classic
+2) node --version - To get node version
+3) npm --version - To get npm version
+4) sudo snap remove node - To uninstall node (npm as well)
+
+Node.js is an event driven, non-blocking I/O model, single threaded javascript runtime that used Google's V8 engine to run javascript code on the server.
