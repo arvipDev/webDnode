@@ -37,10 +37,8 @@ create server and then user it so - http.createServer
 routing - Usually done using express, can be done using a node module called url
 url module - used to route traffic to different endpoints/resources
 
-<<<<<<< HEAD
-=======
 __dirname - get the current directory name where node is run. This is useful while reading from fs. Provides relative path option dynamically.
->>>>>>> master
+
 
 
 
