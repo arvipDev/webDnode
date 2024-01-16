@@ -28,20 +28,30 @@ fs.readFile('./txt/start.txt', 'utf-8', (err, data) => {
 });
 console.log('Reading file...');
 
+
+
 //http module 
+const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
+const jsonObjData = JSON.parse(data);
+
 const server = http.createServer((req, res) => {
-    //res.end('hello fron the server!');
+    // url module
     const resource = req.url;
     if(resource === '/overview' || resource === '/'){
         res.end('This is OVERVIEW endpoint');
     } else if (resource === '/product') {
         res.end('This is PRODUCT endpoint');
+    } else if (resource === '/api') {
+        res.writeHead(200, {
+            'Content-type': 'application/json'
+        });
+        res.end(data);
     } else {
         res.writeHead(404, {
             'Content-type': 'text/html',
             'Custome-key': 'custom-value'
         });
-        res.end('Page not found');
+        res.end("Resource not found!");
     }
 });
 
