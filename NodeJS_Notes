@@ -5,10 +5,10 @@ How Node.js works behind the scene - https://www.youtube.com/watch?v=ooBxSg1Cl1w
 3) req res/ properties methods/http
  Node.js Guide - https://nodejs.org/en/guides
  
- Node.js is an event driven runtime that uses javaScript to execute a service side code/instruction
- ----------------------------------
- Udemy bootcamp 2024
- **********************************
+Node.js is an event driven runtime that uses javaScript to execute a service side code/instruction
+----------------------------------
+Udemy bootcamp 2024
+**********************************
 Installing node using snap - Check node snap website for latest stable version and its cmd to install - https://snapcraft.io/node
 1) sudo snap install node --classic
 2) node --version - To get node version
@@ -17,8 +17,15 @@ Installing node using snap - Check node snap website for latest stable version a
 
 Node.js is an event driven, non-blocking I/O model, single threaded javascript runtime that used Google's V8 engine to run javascript code on the server.
 
+in terminal - 
+1) node (enter to enter node)
+2) Tab (twice) to show all node modules, CTRL + D to exit node.
+3) _ means previous result
+4) String. TAB (for all String methods)
+
 fs module - file system module is used to read/write data from file system, this modules allows JS code to access file system in the computer.
-readFileSync, writeFileSync
+synchronous/blocking way - readFileSync, writeFileSync
+asynchronous/non-blocking way - readFile, writeFile
 
 Since node.js is a single threaded runtime, it is Synchronous. 
 In order to make node.js asynchronous, call back functions are used. 
@@ -26,3 +33,14 @@ Callback functions let the code continue with next line of execution and callbac
 
 http module - this is for creating a server to listen to requests and provide a response. 
 create server and then user it so - http.createServer
+
+routing - Usually done using express, can be done using a node module called url
+url module - used to route traffic to different endpoints/resources
+
+__dirname - get the current directory name where node is run. This is useful while reading from fs. Provides relative path option dynamically.
+
+
+
+
+
+
