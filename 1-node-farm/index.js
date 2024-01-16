@@ -1,5 +1,6 @@
 const fs = require('fs');
 const http = require('http');
+const url = require('url');
 
 // -----This is the blocking, synchronous way
 const input = fs.readFileSync("./txt/input.txt", "utf-8");
@@ -29,8 +30,19 @@ console.log('Reading file...');
 
 //http module 
 const server = http.createServer((req, res) => {
-    console.log(res);
-    res.end('hello fron the server!');
+    //res.end('hello fron the server!');
+    const resource = req.url;
+    if(resource === '/overview' || resource === '/'){
+        res.end('This is OVERVIEW endpoint');
+    } else if (resource === '/product') {
+        res.end('This is PRODUCT endpoint');
+    } else {
+        res.writeHead(404, {
+            'Content-type': 'text/html',
+            'Custome-key': 'custom-value'
+        });
+        res.end('Page not found');
+    }
 });
 
 server.listen(8000, '127.0.0.1', () => {
