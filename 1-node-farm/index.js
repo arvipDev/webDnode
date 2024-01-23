@@ -14,6 +14,7 @@ fs.writeFileSync('./txt/output.txt', output);
 //This is the asynchronous, non-blocking way
 //Note the triangular space indentation on the left, it is called callback hell.
 //There is a way to make the process asynchoronous without using callback/causing callback hell.
+//The outer most functions gets executed first, unlike the recursive function.
 fs.readFile('./txt/start.txt', 'utf-8', (err, data) => {
     if(err) return console.log('Error!!!');
     fs.readFile(`./txt/${data}.txt`, 'utf-8', (err, data2) => {
@@ -27,13 +28,11 @@ fs.readFile('./txt/start.txt', 'utf-8', (err, data) => {
     });
 });
 console.log('Reading file...');
-
-
-
-//http module 
+ 
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
-const jsonObjData = JSON.parse(data);
+const jsonObjData = JSON.parse(data); // parse a json object from string being read from a file
 
+//http module
 const server = http.createServer((req, res) => {
     // url module
     const resource = req.url;
@@ -53,7 +52,7 @@ const server = http.createServer((req, res) => {
         });
         res.end("Resource not found!");
     }
-});
+})
 
 server.listen(8000, '127.0.0.1', () => {
     console.log('Listening to requests on port 8000: ');
